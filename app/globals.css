@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-charcoal: #1f1f1f;
+  --color-offwhite: #faf8f3;
+  --color-sand: #e8dfd1;
+  --color-cobalt: #0057ff;
+  --color-orange: #ff6a00;
+  --color-surface-card: #f4efe6;
+  --color-charcoal-light: #2c2c2c;
+  
+  --font-heading: var(--font-montserrat), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+}
+
+@layer base {
+  :root {
+    --brand-charcoal: #1f1f1f;
+    --brand-offwhite: #faf8f3;
+    --brand-sand: #e8dfd1;
+    --brand-cobalt: #0057ff;
+    --brand-orange: #ff6a00;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #faf8f3;
+    color: #1f1f1f;
+    font-family: var(--font-inter), Arial, sans-serif;
+    overflow-x: hidden;
+    selection-background-color: #0057ff;
+    selection-color: #faf8f3;
+  }
+
+  ::selection {
+    background-color: #0057ff;
+    color: #faf8f3;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-montserrat), Arial, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ThAspect Perspective Geometric Gestures */
+.angle-cut-24 {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 0 100%);
+}
+
+.angle-cut-reverse {
+  clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
+}
+
+.perspective-hover {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.perspective-hover:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0px #1f1f1f;
+}
+
+.perspective-hover-cobalt:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 6px 6px 0px #0057ff;
+}
+
+.angle-badge {
+  transform: skewX(-12deg);
+}
+
+.angle-badge > * {
+  transform: skewX(12deg);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #faf8f3;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e8dfd1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f1f1f;
+}
