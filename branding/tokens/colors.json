@@ -1,0 +1,17 @@
+{
+  "brand": {
+    "charcoal": "#1F1F1F",
+    "offWhite": "#FAF8F3",
+    "sand": "#E8DFD1",
+    "cobalt": "#0057FF",
+    "orange": "#FF6A00"
+  },
+  "semantic": {
+    "text": "#1F1F1F",
+    "background": "#FAF8F3",
+    "surface": "#FFFFFF",
+    "border": "#D6D0C6",
+    "action": "#0057FF",
+    "accent": "#FF6A00"
+  }
+}
