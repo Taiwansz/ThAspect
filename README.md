@@ -17,5 +17,7 @@ Identidade visual oficial do ThAspect — streetwear construída a partir de per
 - `branding/templates/` — templates editáveis de social, produto, embalagem e digital.
 - `branding/reference/` — prancha oficial de referência.
 - `.agents/skills/thaspect-brand/` — skill completa para qualquer agente aplicar a identidade corretamente.
+- `v1/` — primeira versão histórica do sistema (banco de dados ThAspectDB, DER e documentação original).
 
 > A identidade do ThAspect deve comunicar que o mesmo objeto pode ser percebido por ângulos diferentes sem perder sua essência.
+
