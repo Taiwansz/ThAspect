@@ -40,9 +40,9 @@ export const PRODUCTS: Product[] = [
     badge: "Mais Vendido",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -64,9 +64,9 @@ export const PRODUCTS: Product[] = [
     badge: "Novo",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -88,9 +88,9 @@ export const PRODUCTS: Product[] = [
     badge: "Limitado",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -113,9 +113,9 @@ export const PRODUCTS: Product[] = [
     badge: "Iconico",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -138,9 +138,9 @@ export const PRODUCTS: Product[] = [
     badge: "Inverno",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -161,9 +161,9 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     featured: false,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -185,9 +185,9 @@ export const PRODUCTS: Product[] = [
     badge: "Tecnico",
     featured: false,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -209,9 +209,9 @@ export const PRODUCTS: Product[] = [
     badge: "Acessorio",
     featured: true,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   },
   {
@@ -232,9 +232,9 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     featured: false,
     angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
+      frontal: "/antigo/brand/templates/product-card-1200.svg",
+      angular: "/antigo/brand/templates/hangtag-600x1000.svg",
+      dorsal: "/antigo/brand/templates/social-post-1080.svg"
     }
   }
 ];

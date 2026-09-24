@@ -63,7 +63,7 @@ export const AntigoFooter: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="relative h-10 w-48">
               <Image
-                src="/brand/logos/svg/thaspect-one-color-white.svg"
+                src="/antigo/brand/logos/svg/thaspect-one-color-white.svg"
                 alt="ThAspect White Logo"
                 fill
                 className="object-contain object-left"

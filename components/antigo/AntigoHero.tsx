@@ -35,7 +35,7 @@ export const AntigoHero: React.FC = () => {
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
-            backgroundImage: "url('/brand/graphics/patterns/pattern-grid.svg')",
+            backgroundImage: "url('/antigo/brand/graphics/patterns/pattern-grid.svg')",
             backgroundSize: "60px 60px",
           }}
         />
@@ -128,7 +128,7 @@ export const AntigoHero: React.FC = () => {
                 {/* Background Grid Accent */}
                 <div className="absolute inset-0 opacity-10 flex items-center justify-center">
                   <Image
-                    src="/brand/graphics/svg/perspective-grid.svg"
+                    src="/antigo/brand/graphics/svg/perspective-grid.svg"
                     alt="Grid"
                     fill
                     className="object-contain"
@@ -150,7 +150,7 @@ export const AntigoHero: React.FC = () => {
                   }}
                 >
                   <Image
-                    src="/brand/logos/svg/thaspect-monogram.svg"
+                    src="/antigo/brand/logos/svg/thaspect-monogram.svg"
                     alt="ThAspect Perspective Monogram"
                     fill
                     className="object-contain drop-shadow-[0_15px_15px_rgba(0,87,255,0.3)]"

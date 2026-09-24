@@ -12,7 +12,7 @@ export const AntigoDropsSection: React.FC = () => {
       badgeColor: "bg-[#0057FF]",
       releaseDate: "SETEMBRO 2026",
       desc: "Primeira colecao da marca com camisetas de alta gramatura (260g/m2), cortes angulados de 24 graus e paleta oficial Charcoal, Off White, Sand, Cobalt e Orange.",
-      image: "/brand/templates/website-hero-1440.svg",
+      image: "/antigo/brand/templates/website-hero-1440.svg",
       active: true,
     },
     {
@@ -22,7 +22,7 @@ export const AntigoDropsSection: React.FC = () => {
       badgeColor: "bg-[#FF6A00]",
       releaseDate: "NOVEMBRO 2026",
       desc: "Jaquetas tecnicas em tecidos impermeaveis com ziperes invertidos, capuzes triplos e estampas com distorcao anamorfica calculada para visualizacao sob angulos especificos.",
-      image: "/brand/templates/social-story-1080x1920.svg",
+      image: "/antigo/brand/templates/social-story-1080x1920.svg",
       active: false,
     },
     {
@@ -32,7 +32,7 @@ export const AntigoDropsSection: React.FC = () => {
       badgeColor: "bg-[#1F1F1F]",
       releaseDate: "JANEIRO 2027",
       desc: "Linha de alfaiataria utilitaria combinando sarjas tecnologicas, calcadas estruturadas e bolsas modulares com engate rapido magnetico Fidlock.",
-      image: "/brand/templates/social-post-1080.svg",
+      image: "/antigo/brand/templates/social-post-1080.svg",
       active: false,
     },
   ];

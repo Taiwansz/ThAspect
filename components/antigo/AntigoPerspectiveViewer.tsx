@@ -14,7 +14,7 @@ export const AntigoPerspectiveViewer: React.FC = () => {
       description: "Visao plana simetrica. A estrutura essencial do corte oversized sem distorcao.",
       transformStyle: "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)",
       coordinates: { x: "0.00°", y: "0.00°", z: "1.00", fov: "50mm" },
-      image: "/brand/templates/product-card-1200.svg",
+      image: "/antigo/brand/templates/product-card-1200.svg",
     },
     angle24: {
       label: "PERSPECTIVA CANONICA // 24°",
@@ -22,7 +22,7 @@ export const AntigoPerspectiveViewer: React.FC = () => {
       description: "O angulo oficial da marca. Revela o caimento lateral, as costuras inclinadas e a profundidade visual.",
       transformStyle: "perspective(1000px) rotateY(-24deg) rotateX(10deg) scale(1.05)",
       coordinates: { x: "-24.00°", y: "10.00°", z: "1.05", fov: "35mm" },
-      image: "/brand/templates/website-hero-1440.svg",
+      image: "/antigo/brand/templates/website-hero-1440.svg",
     },
     angle45: {
       label: "ANAMORFICO // 45°",
@@ -30,7 +30,7 @@ export const AntigoPerspectiveViewer: React.FC = () => {
       description: "Ruptura geometrica máxima. A tipografia e a arte gráfica se expandem em fuga dimensional.",
       transformStyle: "perspective(1000px) rotateY(45deg) rotateX(15deg) scale(1.1)",
       coordinates: { x: "45.00°", y: "15.00°", z: "1.10", fov: "24mm" },
-      image: "/brand/templates/social-post-1080.svg",
+      image: "/antigo/brand/templates/social-post-1080.svg",
     },
     macro: {
       label: "DETALHE ESTRUTURAL // MACRO",
@@ -38,7 +38,7 @@ export const AntigoPerspectiveViewer: React.FC = () => {
       description: "Foco na densidade do algodao 260g/m2, nos acabamentos duplos e nas etiquetas emborrachadas.",
       transformStyle: "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.3)",
       coordinates: { x: "0.00°", y: "0.00°", z: "1.30", fov: "85mm" },
-      image: "/brand/templates/hangtag-600x1000.svg",
+      image: "/antigo/brand/templates/hangtag-600x1000.svg",
     },
   };
 
@@ -50,7 +50,7 @@ export const AntigoPerspectiveViewer: React.FC = () => {
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
-          backgroundImage: "url('/brand/graphics/patterns/pattern-grid.svg')",
+          backgroundImage: "url('/antigo/brand/graphics/patterns/pattern-grid.svg')",
           backgroundSize: "40px 40px",
         }}
       />

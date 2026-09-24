@@ -49,7 +49,7 @@ export const AntigoHeader: React.FC = () => {
           <Link href="/" className="flex items-center gap-3 group focus:outline-none">
             <div className="relative h-10 w-44 sm:w-52 transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/brand/logos/svg/thaspect-primary.svg"
+                src="/antigo/brand/logos/svg/thaspect-primary.svg"
                 alt="ThAspect Logo"
                 fill
                 priority
@@ -165,7 +165,7 @@ export const AntigoHeader: React.FC = () => {
               <div className="flex items-center justify-between pb-6 border-b border-[#E8DFD1]">
                 <div className="relative h-8 w-32">
                   <Image
-                    src="/brand/logos/svg/thaspect-primary.svg"
+                    src="/antigo/brand/logos/svg/thaspect-primary.svg"
                     alt="ThAspect Logo"
                     fill
                     className="object-contain object-left"
