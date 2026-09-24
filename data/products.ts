@@ -13,6 +13,7 @@ export interface Product {
   colorHex: string;
   badge?: string;
   featured?: boolean;
+  gallerySheet: string;
   angleView: {
     frontal: string;
     angular: string;
@@ -21,6 +22,7 @@ export interface Product {
 }
 
 const photo = (id: string) => `/products/${id}.jpg`;
+const gallery = (id: string) => `/products/gallery/${id}-gallery.webp`;
 
 export const PRODUCTS: Product[] = [
   {
@@ -38,6 +40,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Mais vendido",
     featured: true,
+    gallerySheet: gallery("prod-01"),
     angleView: { frontal: photo("prod-01"), angular: photo("prod-01"), dorsal: photo("prod-01") }
   },
   {
@@ -54,6 +57,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#FAF8F3",
     badge: "Nova",
     featured: true,
+    gallerySheet: gallery("prod-02"),
     angleView: { frontal: photo("prod-02"), angular: photo("prod-02"), dorsal: photo("prod-02") }
   },
   {
@@ -70,6 +74,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Limitada",
     featured: true,
+    gallerySheet: gallery("prod-03"),
     angleView: { frontal: photo("prod-03"), angular: photo("prod-03"), dorsal: photo("prod-03") }
   },
   {
@@ -87,6 +92,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Core",
     featured: true,
+    gallerySheet: gallery("prod-04"),
     angleView: { frontal: photo("prod-04"), angular: photo("prod-04"), dorsal: photo("prod-04") }
   },
   {
@@ -104,6 +110,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#E8DFD1",
     badge: "Inverno",
     featured: true,
+    gallerySheet: gallery("prod-05"),
     angleView: { frontal: photo("prod-05"), angular: photo("prod-05"), dorsal: photo("prod-05") }
   },
   {
@@ -120,6 +127,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Destaque",
     featured: true,
+    gallerySheet: gallery("prod-06"),
     angleView: { frontal: photo("prod-06"), angular: photo("prod-06"), dorsal: photo("prod-06") }
   },
   {
@@ -136,6 +144,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Técnica",
     featured: true,
+    gallerySheet: gallery("prod-07"),
     angleView: { frontal: photo("prod-07"), angular: photo("prod-07"), dorsal: photo("prod-07") }
   },
   {
@@ -152,6 +161,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#0057FF",
     badge: "Acessório",
     featured: true,
+    gallerySheet: gallery("prod-08"),
     angleView: { frontal: photo("prod-08"), angular: photo("prod-08"), dorsal: photo("prod-08") }
   },
   {
@@ -168,6 +178,7 @@ export const PRODUCTS: Product[] = [
     colorHex: "#1F1F1F",
     badge: "Novo",
     featured: true,
+    gallerySheet: gallery("prod-09"),
     angleView: { frontal: photo("prod-09"), angular: photo("prod-09"), dorsal: photo("prod-09") }
   }
 ];
