@@ -1,5 +1,6 @@
 export interface Product {
   id: string;
+  slug: string;
   name: string;
   category: "camisetas" | "hoodies" | "calcas" | "acessorios";
   collection: string;
@@ -24,6 +25,7 @@ const photo = (id: string) => `/products/${id}.jpg`;
 export const PRODUCTS: Product[] = [
   {
     id: "prod-01",
+    slug: "camiseta-perspective-charcoal",
     name: "Camiseta Perspective Charcoal",
     category: "camisetas",
     collection: "Drop 01 · Perspective",
@@ -40,6 +42,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-02",
+    slug: "camiseta-angle-off-white",
     name: "Camiseta Angle Off White",
     category: "camisetas",
     collection: "Drop 01 · Perspective",
@@ -55,6 +58,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-03",
+    slug: "camiseta-back-perspective",
     name: "Camiseta Back Perspective",
     category: "camisetas",
     collection: "Drop 01 · Perspective",
@@ -70,6 +74,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-04",
+    slug: "camiseta-core-logo",
     name: "Camiseta Core Logo",
     category: "camisetas",
     collection: "Core Series",
@@ -86,6 +91,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-05",
+    slug: "hoodie-horizon-sand",
     name: "Hoodie Horizon Sand",
     category: "hoodies",
     collection: "Winter Cut · Architectural",
@@ -102,6 +108,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-06",
+    slug: "hoodie-vision-charcoal",
     name: "Hoodie Vision Charcoal",
     category: "hoodies",
     collection: "Winter Cut · Architectural",
@@ -117,6 +124,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-07",
+    slug: "calca-cargo-aspect",
     name: "Calça Cargo Aspect",
     category: "calcas",
     collection: "Technical Line · 2026",
@@ -132,6 +140,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-08",
+    slug: "shoulder-bag-perspective",
     name: "Shoulder Bag Perspective",
     category: "acessorios",
     collection: "Hardware Series",
@@ -147,6 +156,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "prod-09",
+    slug: "bone-angle-5-panel",
     name: "Boné Angle 5-Panel",
     category: "acessorios",
     collection: "Hardware Series",
@@ -161,6 +171,8 @@ export const PRODUCTS: Product[] = [
     angleView: { frontal: photo("prod-09"), angular: photo("prod-09"), dorsal: photo("prod-09") }
   }
 ];
+
+export const getProductBySlug = (slug: string) => PRODUCTS.find((product) => product.slug === slug);
 
 export const VALID_COUPONS: Record<string, { discountPercent: number; description: string }> = {
   THASPECT10: { discountPercent: 10, description: "Desconto de boas-vindas ThAspect (10%)" },

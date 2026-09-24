@@ -49,6 +49,11 @@
   button, a {
     -webkit-tap-highlight-color: transparent;
   }
+
+  :focus-visible {
+    outline: 2px solid #0057ff;
+    outline-offset: 3px;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -65,4 +70,227 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #1f1f1f;
+}
+
+/* Brand motion primitives */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 700ms cubic-bezier(.2,.75,.2,1),
+    transform 700ms cubic-bezier(.2,.75,.2,1);
+}
+
+[data-reveal].is-visible,
+.motion-reduced [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.hero-kicker {
+  animation: hero-in .65s .05s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-title {
+  animation: hero-in .9s .12s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-copy {
+  animation: hero-in .8s .22s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-actions {
+  animation: hero-in .8s .32s cubic-bezier(.2,.8,.2,1) both;
+}
+
+.hero-accent {
+  position: relative;
+}
+
+.hero-accent::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 42%;
+  height: 4px;
+  background: #0057ff;
+  transform: skewX(-24deg) scaleX(0);
+  transform-origin: left;
+  animation: accent-draw .65s .72s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.hero-plane {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  filter: saturate(1.05);
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1);
+}
+
+.hero-plane-blue {
+  right: 9%;
+  top: 10%;
+  width: 28%;
+  height: 9px;
+  background: #0057ff;
+  transform-origin: right center;
+  box-shadow: 0 0 50px rgba(0,87,255,.22);
+}
+
+.hero-plane-orange {
+  right: 26%;
+  bottom: 19%;
+  width: 17%;
+  height: 7px;
+  background: #ff6a00;
+  transform-origin: right center;
+}
+
+.product-card {
+  perspective: 1000px;
+}
+
+.product-card [class*="aspect-"] {
+  transform-style: preserve-3d;
+}
+
+.product-image {
+  transform: translate3d(0,0,0) rotate(0deg) scale(1);
+  transition: transform 650ms cubic-bezier(.2,.75,.2,1), filter 400ms ease;
+  will-change: transform;
+}
+
+.product-card:hover .product-image {
+  transform: translate3d(3px,-3px,22px) rotate(.7deg) scale(1.045);
+  filter: contrast(1.02);
+}
+
+.product-angle-plane {
+  position: absolute;
+  inset: auto -20% 13% auto;
+  width: 70%;
+  height: 14px;
+  background: #0057ff;
+  transform: rotate(-24deg) translateX(42%);
+  opacity: 0;
+  transition: opacity 280ms ease, transform 500ms cubic-bezier(.2,.75,.2,1);
+  z-index: 2;
+}
+
+.product-card:hover .product-angle-plane {
+  opacity: .92;
+  transform: rotate(-24deg) translateX(0);
+}
+
+.spotlight-product {
+  animation: float-product 5.5s ease-in-out infinite;
+  filter: drop-shadow(0 24px 28px rgba(0,0,0,.22));
+}
+
+.editorial-card {
+  isolation: isolate;
+}
+
+.editorial-media {
+  transition: transform 900ms cubic-bezier(.2,.75,.2,1), filter 650ms ease;
+  will-change: transform;
+}
+
+.editorial-card:hover .editorial-media {
+  transform: scale(1.045) translate3d(0,-3px,0);
+  filter: contrast(1.03);
+}
+
+.angle-divider {
+  height: 44px;
+  margin-top: -1px;
+  background:
+    linear-gradient(168deg, #fff 0 47%, transparent 47.3%),
+    linear-gradient(180deg, #111 0 100%);
+}
+
+.marquee-shell {
+  transform: skewY(-.6deg);
+  margin-block: -2px;
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-shell:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.mobile-panel {
+  animation: panel-in 320ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.quick-view-panel {
+  animation: quick-view-in 360ms cubic-bezier(.2,.8,.2,1) both;
+}
+
+.cart-badge {
+  animation: cart-pop 280ms cubic-bezier(.2,.8,.2,1);
+}
+
+@keyframes hero-in {
+  from { opacity: 0; transform: translate3d(-16px, 22px, 0) skewX(-2deg); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes accent-draw {
+  to { transform: skewX(-24deg) scaleX(1); }
+}
+
+@keyframes float-product {
+  0%, 100% { transform: translate3d(0,0,0) rotate(-.2deg); }
+  50% { transform: translate3d(0,-9px,0) rotate(.2deg); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes panel-in {
+  from { transform: translateX(100%); opacity: .4; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes quick-view-in {
+  from { transform: translateY(18px) scale(.985); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes cart-pop {
+  0% { transform: scale(.7) rotate(-12deg); }
+  65% { transform: scale(1.18) rotate(4deg); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+
+  .spotlight-product,
+  .marquee-track {
+    animation: none !important;
+  }
 }
