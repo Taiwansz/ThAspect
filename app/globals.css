@@ -6,9 +6,6 @@
   --color-sand: #e8dfd1;
   --color-cobalt: #0057ff;
   --color-orange: #ff6a00;
-  --color-surface-card: #f4efe6;
-  --color-charcoal-light: #2c2c2c;
-  
   --font-heading: var(--font-montserrat), sans-serif;
   --font-body: var(--font-inter), sans-serif;
 }
@@ -22,65 +19,38 @@
     --brand-orange: #ff6a00;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   html {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: #faf8f3;
-    color: #1f1f1f;
-    font-family: var(--font-inter), Arial, sans-serif;
+    margin: 0;
     overflow-x: hidden;
-    selection-background-color: #0057ff;
-    selection-color: #faf8f3;
+    background: #faf8f3;
+    color: #111;
+    font-family: var(--font-inter), Arial, sans-serif;
   }
 
   ::selection {
-    background-color: #0057ff;
-    color: #faf8f3;
+    background: #0057ff;
+    color: #fff;
   }
 
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: var(--font-montserrat), Arial, sans-serif;
-    letter-spacing: -0.02em;
+  }
+
+  button, a {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
-/* ThAspect Perspective Geometric Gestures */
-.angle-cut-24 {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 0 100%);
-}
-
-.angle-cut-reverse {
-  clip-path: polygon(0 24px, 100% 0, 100% 100%, 0 100%);
-}
-
-.perspective-hover {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-}
-
-.perspective-hover:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 6px 6px 0px #1f1f1f;
-}
-
-.perspective-hover-cobalt:hover {
-  transform: translate(-4px, -4px);
-  box-shadow: 6px 6px 0px #0057ff;
-}
-
-.angle-badge {
-  transform: skewX(-12deg);
-}
-
-.angle-badge > * {
-  transform: skewX(12deg);
-}
-
-/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -90,8 +60,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e8dfd1;
-  border-radius: 4px;
+  background: #cfc8bd;
 }
 
 ::-webkit-scrollbar-thumb:hover {

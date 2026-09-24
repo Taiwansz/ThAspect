@@ -1,20 +1,15 @@
-import React from "react";
 import { Hero } from "@/components/Hero";
-import { PerspectiveMarquee } from "@/components/PerspectiveMarquee";
+import { BenefitsStrip } from "@/components/BenefitsStrip";
 import { ProductCatalog } from "@/components/ProductCatalog";
-import { DropsSection } from "@/components/DropsSection";
-import { PerspectiveViewer } from "@/components/PerspectiveViewer";
-import { HeritageSection } from "@/components/HeritageSection";
+import { EditorialSection } from "@/components/EditorialSection";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="w-full">
       <Hero />
-      <PerspectiveMarquee />
+      <BenefitsStrip />
       <ProductCatalog />
-      <DropsSection />
-      <PerspectiveViewer />
-      <HeritageSection />
+      <EditorialSection />
     </div>
   );
 }

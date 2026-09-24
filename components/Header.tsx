@@ -3,236 +3,152 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, Search, ShoppingBag, UserRound, X } from "lucide-react";
 import { useCart } from "@/context/CartContext";
-import { ShoppingBag, Search, Menu, X, ArrowUpRight } from "lucide-react";
 
 export const Header: React.FC = () => {
   const { totalItemsCount, setIsCartOpen } = useCart();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      const catalogEl = document.getElementById("catalogo");
-      if (catalogEl) {
-        catalogEl.scrollIntoView({ behavior: "smooth" });
-      }
-    }
+  const goToCatalog = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!query.trim()) return;
+    document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+    setSearchOpen(false);
   };
+
+  const links = [
+    ["INÍCIO", "#top"],
+    ["COLEÇÕES", "#editorial"],
+    ["CAMISETAS", "#catalogo"],
+    ["MOLETONS", "#catalogo"],
+    ["ACESSÓRIOS", "#catalogo"],
+    ["SOBRE", "#manifesto"],
+  ] as const;
 
   return (
     <>
-      {/* Announcement Bar */}
-      <div className="bg-[#1F1F1F] text-[#FAF8F3] text-xs font-mono uppercase tracking-widest py-2 px-4 border-b border-[#2C2C2C]">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3 overflow-hidden whitespace-nowrap">
-            <span className="inline-block w-2 h-2 bg-[#0057FF]"></span>
-            <span className="font-semibold text-[#FAF8F3]">DROP 01 // PERSPECTIVE</span>
-            <span className="text-[#888] hidden sm:inline">|</span>
-            <span className="hidden sm:inline text-[#E8DFD1]">MODA TAMBÉM É PERSPECTIVA</span>
-            <span className="text-[#888] hidden md:inline">|</span>
-            <span className="hidden md:inline text-[#FAF8F3]">FRETE GRATIS PARA TODO O BRASIL ACIMA DE R$ 350</span>
-          </div>
-          <div className="flex items-center gap-2 text-[11px] text-[#FAF8F3] font-bold tracking-wider">
-            <span className="w-1.5 h-1.5 bg-[#FF6A00]"></span>
-            <span>FIND ANOTHER SIDE OF YOU</span>
+      <div className="h-8 bg-[#111] text-white text-[10px] sm:text-[11px] tracking-[0.16em] uppercase">
+        <div className="mx-auto flex h-full max-w-[1440px] items-center justify-center px-4 sm:justify-between">
+          <span>Frete grátis em compras acima de R$ 350 <span className="mx-2 text-white/40">//</span> Parcele em até 6x sem juros</span>
+          <div className="hidden items-center gap-5 md:flex">
+            <span>Ajuda</span>
+            <span>Acompanhar pedido</span>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Navigation */}
-      <header className="sticky top-0 z-40 bg-[#FAF8F3]/95 backdrop-blur-md border-b border-[#E8DFD1]/80 transition-all duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-3 group focus:outline-none">
-            <div className="relative h-10 w-44 sm:w-52 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/brand/logos/svg/thaspect-primary.svg"
-                alt="ThAspect Logo"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </div>
+      <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF8F3]/95 backdrop-blur-md">
+        <div className="mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-5 md:px-8 lg:px-12">
+          <Link href="/" aria-label="Página inicial ThAspect" className="relative h-11 w-40 shrink-0 sm:w-44">
+            <Image
+              src="/brand/logos/svg/thaspect-primary.svg"
+              alt="ThAspect"
+              fill
+              priority
+              className="object-contain object-left"
+            />
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link
-              href="#catalogo"
-              className="text-sm font-semibold tracking-wide text-[#1F1F1F] hover:text-[#0057FF] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#0057FF] hover:after:w-full after:transition-all"
-            >
-              COLECAO
-            </Link>
-            <Link
-              href="#drops"
-              className="text-sm font-semibold tracking-wide text-[#1F1F1F] hover:text-[#0057FF] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#0057FF] hover:after:w-full after:transition-all"
-            >
-              DROPS
-            </Link>
-            <Link
-              href="#lookbook"
-              className="text-sm font-semibold tracking-wide text-[#1F1F1F] hover:text-[#0057FF] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#0057FF] hover:after:w-full after:transition-all"
-            >
-              PERSPECTIVAS
-            </Link>
-            <Link
-              href="#heritage"
-              className="text-sm font-semibold tracking-wide text-[#1F1F1F] hover:text-[#0057FF] transition-colors flex items-center gap-1 group/v1"
-            >
-              <span>V1 / ORIGENS</span>
-              <span className="text-[10px] font-mono px-1.5 py-0.5 bg-[#E8DFD1] text-[#1F1F1F] font-bold group-hover/v1:bg-[#0057FF] group-hover/v1:text-[#FAF8F3] transition-colors">
-                CS-VAULT
-              </span>
-            </Link>
-            <Link
-              href="#manifesto"
-              className="text-sm font-semibold tracking-wide text-[#1F1F1F] hover:text-[#0057FF] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#0057FF] hover:after:w-full after:transition-all"
-            >
-              MANIFESTO
-            </Link>
+          <nav className="hidden items-center gap-8 lg:flex">
+            {links.map(([label, href]) => (
+              <Link
+                key={label}
+                href={href}
+                className="relative py-2 text-[12px] font-bold tracking-[0.12em] text-[#161616] transition-colors hover:text-[#0057FF] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#FF6A00] after:transition-all hover:after:w-full"
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
-          {/* Action Icons */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Search Trigger */}
+          <div className="flex items-center gap-1 sm:gap-2">
             <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
+              type="button"
+              onClick={() => setSearchOpen((value) => !value)}
               aria-label="Buscar produtos"
-              className="p-2 text-[#1F1F1F] hover:text-[#0057FF] hover:bg-[#E8DFD1]/50 rounded transition-colors focus:outline-none"
+              className="grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-black/5"
             >
-              <Search className="w-5 h-5" />
+              <Search className="h-5 w-5" strokeWidth={1.7} />
             </button>
-
-            {/* Shopping Bag Trigger */}
             <button
-              onClick={() => setIsCartOpen(true)}
-              aria-label="Abrir carrinho de compras"
-              className="relative p-2.5 bg-[#1F1F1F] text-[#FAF8F3] hover:bg-[#0057FF] transition-all duration-200 perspective-hover rounded-sm flex items-center gap-2 group focus:outline-none"
+              type="button"
+              aria-label="Minha conta"
+              className="hidden h-10 w-10 place-items-center rounded-full transition-colors hover:bg-black/5 sm:grid"
             >
-              <ShoppingBag className="w-5 h-5 text-[#FAF8F3]" />
-              <span className="hidden sm:inline text-xs font-bold font-mono tracking-wider">
-                SACOLA
-              </span>
-              {totalItemsCount > 0 && (
-                <span className="w-5 h-5 flex items-center justify-center bg-[#FF6A00] text-[#FAF8F3] text-[11px] font-mono font-bold rounded-full border-2 border-[#1F1F1F]">
+              <UserRound className="h-5 w-5" strokeWidth={1.7} />
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsCartOpen(true)}
+              aria-label="Abrir sacola"
+              className="relative grid h-10 w-10 place-items-center rounded-full transition-colors hover:bg-black/5"
+            >
+              <ShoppingBag className="h-5 w-5" strokeWidth={1.7} />
+              {totalItemsCount > 0 ? (
+                <span className="absolute right-0 top-0 grid h-4 min-w-4 place-items-center rounded-full bg-[#FF6A00] px-1 text-[9px] font-bold text-white">
                   {totalItemsCount}
                 </span>
-              )}
+              ) : null}
             </button>
-
-            {/* Mobile Hamburger Menu Toggle */}
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Menu de navegacao mobile"
-              className="p-2 text-[#1F1F1F] hover:text-[#0057FF] lg:hidden focus:outline-none"
+              type="button"
+              onClick={() => setMobileOpen((value) => !value)}
+              aria-label="Abrir menu"
+              className="grid h-10 w-10 place-items-center rounded-full lg:hidden"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Collapsible Search Bar */}
-        {isSearchOpen && (
-          <div className="bg-[#E8DFD1]/40 border-b border-[#E8DFD1] px-4 py-3 animate-in fade-in duration-150">
-            <form onSubmit={handleSearchSubmit} className="max-w-3xl mx-auto flex items-center gap-2">
+        {searchOpen ? (
+          <form onSubmit={goToCatalog} className="border-t border-black/10 bg-white px-5 py-4">
+            <div className="mx-auto flex max-w-2xl gap-2">
               <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Busque por camiseta, hoodie, calca, drop ou codigo..."
-                className="w-full bg-[#FAF8F3] border border-[#1F1F1F] px-4 py-2 text-sm text-[#1F1F1F] placeholder-[#888] focus:outline-none focus:ring-2 focus:ring-[#0057FF]"
                 autoFocus
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="O que você procura?"
+                className="h-11 flex-1 border border-black/20 bg-[#FAF8F3] px-4 text-sm outline-none focus:border-[#0057FF]"
               />
-              <button
-                type="submit"
-                className="px-5 py-2 bg-[#0057FF] text-[#FAF8F3] text-xs font-bold tracking-wider hover:bg-[#1F1F1F] transition-colors"
-              >
+              <button className="bg-[#111] px-5 text-xs font-bold tracking-[0.12em] text-white hover:bg-[#0057FF]">
                 BUSCAR
               </button>
-            </form>
-          </div>
-        )}
+            </div>
+          </form>
+        ) : null}
       </header>
 
-      {/* Mobile Drawer Navigation */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden bg-[#1F1F1F]/90 backdrop-blur-sm">
-          <div className="fixed inset-y-0 right-0 w-full max-w-xs bg-[#FAF8F3] p-6 shadow-2xl flex flex-col justify-between">
-            <div>
-              <div className="flex items-center justify-between pb-6 border-b border-[#E8DFD1]">
-                <div className="relative h-8 w-32">
-                  <Image
-                    src="/brand/logos/svg/thaspect-primary.svg"
-                    alt="ThAspect Logo"
-                    fill
-                    className="object-contain object-left"
-                  />
-                </div>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="p-2 text-[#1F1F1F] hover:text-[#0057FF]"
-                >
-                  <X className="w-6 h-6" />
-                </button>
+      {mobileOpen ? (
+        <div className="fixed inset-0 z-[60] bg-[#111]/70 backdrop-blur-sm lg:hidden">
+          <aside className="ml-auto flex h-full w-[86%] max-w-sm flex-col bg-[#FAF8F3] p-6 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-black/10 pb-5">
+              <div className="relative h-9 w-36">
+                <Image src="/brand/logos/svg/thaspect-primary.svg" alt="ThAspect" fill className="object-contain object-left" />
               </div>
-
-              <div className="mt-8 flex flex-col gap-6">
-                <Link
-                  href="#catalogo"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold tracking-tight text-[#1F1F1F] hover:text-[#0057FF] flex items-center justify-between"
-                >
-                  <span>COLECAO COMPLETA</span>
-                  <ArrowUpRight className="w-5 h-5 text-[#888]" />
-                </Link>
-                <Link
-                  href="#drops"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold tracking-tight text-[#1F1F1F] hover:text-[#0057FF] flex items-center justify-between"
-                >
-                  <span>DROPS EXCLUSIVOS</span>
-                  <ArrowUpRight className="w-5 h-5 text-[#888]" />
-                </Link>
-                <Link
-                  href="#lookbook"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold tracking-tight text-[#1F1F1F] hover:text-[#0057FF] flex items-center justify-between"
-                >
-                  <span>VISUALIZADOR DE ANGULOS</span>
-                  <ArrowUpRight className="w-5 h-5 text-[#888]" />
-                </Link>
-                <Link
-                  href="#heritage"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold tracking-tight text-[#1F1F1F] hover:text-[#0057FF] flex items-center justify-between"
-                >
-                  <span>V1 / ORIGENS (CS-VAULT)</span>
-                  <span className="text-xs bg-[#0057FF] text-[#FAF8F3] px-2 py-0.5 font-mono">
-                    LEGACY
-                  </span>
-                </Link>
-                <Link
-                  href="#manifesto"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-bold tracking-tight text-[#1F1F1F] hover:text-[#0057FF] flex items-center justify-between"
-                >
-                  <span>MANIFESTO DA MARCA</span>
-                  <ArrowUpRight className="w-5 h-5 text-[#888]" />
-                </Link>
-              </div>
+              <button type="button" onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
+                <X className="h-6 w-6" />
+              </button>
             </div>
-
-            <div className="pt-6 border-t border-[#E8DFD1] text-xs font-mono text-[#666]">
-              <p className="font-bold text-[#1F1F1F]">THASPECT STREETWEAR</p>
-              <p>Find Another Side of You</p>
-              <p className="mt-2 text-[11px] text-[#0057FF]">Sao Paulo, Brasil</p>
-            </div>
-          </div>
+            <nav className="mt-8 flex flex-col">
+              {links.map(([label, href]) => (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className="border-b border-black/10 py-4 text-lg font-black tracking-tight"
+                >
+                  {label}
+                </Link>
+              ))}
+            </nav>
+            <p className="mt-auto text-xs uppercase tracking-[0.18em] text-black/50">Find Another Side of You.</p>
+          </aside>
         </div>
-      )}
+      ) : null}
     </>
   );
 };

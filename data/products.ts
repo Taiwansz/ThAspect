@@ -19,228 +19,151 @@ export interface Product {
   };
 }
 
+const photo = (id: string) => `/products/${id}.jpg`;
+
 export const PRODUCTS: Product[] = [
   {
     id: "prod-01",
-    name: "Camiseta Preta Aviador",
+    name: "Camiseta Perspective Charcoal",
     category: "camisetas",
     collection: "Drop 01 · Perspective",
-    price: 189.0,
-    originalPrice: 220.0,
-    description: "Camiseta streetwear premium oversized confeccionada em algodao penteado 260g/m2. Recorte angular de 24 graus nas costuras laterais e estampagem em serigrafia de alta densidade.",
-    details: [
-      "100% Algodao brasileiro pesado (260g/m2)",
-      "Modelagem oversized arquitetonica",
-      "Gola canelada de 3cm com reforco ombro a ombro",
-      "Etiqueta de autenticidade ThAspect na barra"
-    ],
+    price: 189,
+    originalPrice: 220,
+    description: "Camiseta oversized em algodão pesado com assinatura ThAspect e recortes gráficos Cobalt e Orange.",
+    details: ["Algodão penteado 260g/m²", "Modelagem oversized", "Gola canelada reforçada", "Etiqueta ThAspect aplicada"],
     sizes: ["P", "M", "G", "GG"],
     colorName: "Charcoal",
     colorHex: "#1F1F1F",
-    badge: "Mais Vendido",
+    badge: "Mais vendido",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-01"), angular: photo("prod-01"), dorsal: photo("prod-01") }
   },
   {
     id: "prod-02",
-    name: "Camiseta Clara New York Fashion",
+    name: "Camiseta Angle Off White",
     category: "camisetas",
     collection: "Drop 01 · Perspective",
-    price: 199.0,
-    description: "Tonalidade Off White exclusiva (#FAF8F3). Tipografia frontal experimental e coordenadas geograficas com estetica minimalista e angular.",
-    details: [
-      "100% Algodao premium pre-encolhido",
-      "Costura reforcada e acabamento com pesponto duplo",
-      "Arte geométrica inspirada em arquitetura brutalista",
-      "Lavagem stone washed com toque macio"
-    ],
+    price: 199,
+    description: "Off White com composição gráfica angular, proporção oversized e acabamento de alta densidade.",
+    details: ["Algodão premium pré-encolhido", "Pesponto duplo", "Arte geométrica proprietária", "Toque macio"],
     sizes: ["P", "M", "G", "GG"],
     colorName: "Off White",
     colorHex: "#FAF8F3",
-    badge: "Novo",
+    badge: "Nova",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-02"), angular: photo("prod-02"), dorsal: photo("prod-02") }
   },
   {
     id: "prod-03",
-    name: "Camiseta Streetwear Prison",
+    name: "Camiseta Back Perspective",
     category: "camisetas",
-    collection: "Edicao Limitada · Break The Silence",
-    price: 219.0,
-    description: "Design de ruptura. Tipografia distorcida sobre malha densa, traduzindo a tensao entre confinamento e perspectiva urbana.",
-    details: [
-      "Algodao fio 20.1 penteado",
-      "Estampa dorsal em quadricromia com toque zero",
-      "Corte quadrado boxy fit com ombros descaidos",
-      "Tiragem numerada e limitada"
-    ],
+    collection: "Drop 01 · Perspective",
+    price: 219,
+    description: "Peça de costas marcantes, tipografia vertical e blocos Cobalt e Orange construídos a partir de novos ângulos.",
+    details: ["Algodão pesado", "Estampa traseira em alta definição", "Boxy fit", "Tiragem limitada"],
     sizes: ["M", "G", "GG"],
     colorName: "Charcoal",
     colorHex: "#1F1F1F",
-    badge: "Limitado",
+    badge: "Limitada",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-03"), angular: photo("prod-03"), dorsal: photo("prod-03") }
   },
   {
     id: "prod-04",
-    name: "Camiseta Ghost Spin",
+    name: "Camiseta Core Logo",
     category: "camisetas",
-    collection: "Drop 01 · Perspective",
-    price: 199.0,
-    originalPrice: 230.0,
-    description: "Cromatica assinada com acento Cobalt (#0057FF) e micro-detalhe Orange (#FF6A00). Um manifesto em movimento sobre o conceito de que o mesmo objeto muda conforme o observador.",
-    details: [
-      "Tecido respiravel de alta gramatura",
-      "Arte visual com aplicacao de foil e serigrafia",
-      "Decote careca estruturado",
-      "Desenvolvida para durabilidade extrema"
-    ],
+    collection: "Core Series",
+    price: 199,
+    originalPrice: 230,
+    description: "A assinatura principal ThAspect em uma camiseta preta limpa, direta e fácil de combinar.",
+    details: ["Algodão respirável", "Serigrafia de alta densidade", "Decote estruturado", "Acabamento premium"],
     sizes: ["P", "M", "G", "GG"],
-    colorName: "Cobalt Acento",
-    colorHex: "#0057FF",
-    badge: "Iconico",
+    colorName: "Charcoal",
+    colorHex: "#1F1F1F",
+    badge: "Core",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-04"), angular: photo("prod-04"), dorsal: photo("prod-04") }
   },
   {
     id: "prod-05",
-    name: "Hoodie Horizon Angle Sand",
+    name: "Hoodie Horizon Sand",
     category: "hoodies",
     collection: "Winter Cut · Architectural",
-    price: 389.0,
-    originalPrice: 440.0,
-    description: "Moletom 3 cabos 420g/m2 felpado na tonalidade Sand (#E8DFD1). Capuz duplo de alta armacao sem cordoes para silhueta pura e arquitetonica.",
-    details: [
-      "Algodao e poliester reciclado de alta retencao termica",
-      "Bolso canguru com entradas angulares cortadas a laser",
-      "Punhos e barras em ribana canelada 2x1 com elastano",
-      "Bordado tonal sutil do monograma ThAspect no peito"
-    ],
+    price: 389,
+    originalPrice: 440,
+    description: "Moletom Sand de alta gramatura com logo frontal e construção visual inspirada em arquitetura brutalista.",
+    details: ["Moletom 420g/m²", "Capuz estruturado", "Bolso canguru", "Etiqueta emborrachada"],
     sizes: ["P", "M", "G", "GG"],
     colorName: "Sand",
     colorHex: "#E8DFD1",
     badge: "Inverno",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-05"), angular: photo("prod-05"), dorsal: photo("prod-05") }
   },
   {
     id: "prod-06",
-    name: "Hoodie Charcoal Perspective",
+    name: "Hoodie Vision Charcoal",
     category: "hoodies",
     collection: "Winter Cut · Architectural",
-    price: 419.0,
-    description: "A expressao maxima do streetwear ThAspect. Moletom preto estruturado com corte reto e painel traseiro com a logo em perspectiva anamorfica.",
-    details: [
-      "Malha grossa 450g/m2 com interior aveludado",
-      "Capuz estruturado anatomico de 3 paineis",
-      "Costuras tridimensionais nas costas",
-      "Etiqueta de borracha termocolante na manga esquerda"
-    ],
+    price: 419,
+    description: "Hoodie preto estruturado com assinatura frontal e estética limpa para uma silhueta urbana de alto impacto.",
+    details: ["Malha grossa 450g/m²", "Capuz de 3 painéis", "Costuras reforçadas", "Acabamento interno aveludado"],
     sizes: ["M", "G", "GG"],
     colorName: "Charcoal",
     colorHex: "#1F1F1F",
-    featured: false,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    badge: "Destaque",
+    featured: true,
+    angleView: { frontal: photo("prod-06"), angular: photo("prod-06"), dorsal: photo("prod-06") }
   },
   {
     id: "prod-07",
-    name: "Calca Cargo Perspective Tech",
+    name: "Calça Cargo Aspect",
     category: "calcas",
     collection: "Technical Line · 2026",
-    price: 349.0,
-    description: "Calca tecnica em sarja acetinada com elastano. Bolsos utilitarios dispostos em diagonais ergonomicas de 24 graus para facil acesso e perfil aerodinamico.",
-    details: [
-      "Sarja 98% algodao e 2% elastano de alta resistencia",
-      "6 bolsos estrategicos com fecho magnetico e ziper invertido",
-      "Ajuste duplo na barra com reguladores de pressao",
-      "Cintura elastica com cordao interno personalizado"
-    ],
+    price: 349,
+    description: "Cargo técnica com bolsos utilitários, costuras angulares e detalhes funcionais em Cobalt e Orange.",
+    details: ["Sarja resistente", "6 bolsos funcionais", "Fechos reforçados", "Modelagem ampla"],
     sizes: ["38", "40", "42", "44"],
     colorName: "Charcoal",
     colorHex: "#1F1F1F",
-    badge: "Tecnico",
-    featured: false,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    badge: "Técnica",
+    featured: true,
+    angleView: { frontal: photo("prod-07"), angular: photo("prod-07"), dorsal: photo("prod-07") }
   },
   {
     id: "prod-08",
-    name: "Shoulder Bag Transversal Cobalt",
+    name: "Shoulder Bag Perspective",
     category: "acessorios",
     collection: "Hardware Series",
-    price: 159.0,
-    description: "Bolsa transversal compacta em Cordura 500D com vivo em Cobalt Blue. Fita acetinada regulavel de 40mm com fivela de engate rapido industrial.",
-    details: [
-      "Tecido impermeavel de altissima resistencia a abrasao",
-      "Ziper selado YKK contra chuva e poeira",
-      "Compartimento interno acolchoado para smartphone",
-      "Mosquetao giratorio em metal fosco escurecido"
-    ],
-    sizes: ["UNICO"],
-    colorName: "Cobalt / Charcoal",
+    price: 159,
+    description: "Bolsa transversal compacta com painéis em Off White, Cobalt e Orange e construção utilitária.",
+    details: ["Tecido de alta resistência", "Zíper selado", "Compartimentos internos", "Alça regulável"],
+    sizes: ["ÚNICO"],
+    colorName: "Charcoal / Cobalt",
     colorHex: "#0057FF",
-    badge: "Acessorio",
+    badge: "Acessório",
     featured: true,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    angleView: { frontal: photo("prod-08"), angular: photo("prod-08"), dorsal: photo("prod-08") }
   },
   {
     id: "prod-09",
-    name: "Bone 5-Panel ThAspect Monogram",
+    name: "Boné Angle 5-Panel",
     category: "acessorios",
     collection: "Hardware Series",
-    price: 139.0,
-    description: "Bone formato 5-panel em sarja de algodao peletizado. Aba reta com costuras paralelas e fecho traseiro strapback em couro com fecho metalico gravado a laser.",
-    details: [
-      "Estrutura desconstruida de perfil medio",
-      "Ilhoses bordados para ventilacao ativa",
-      "Bordado frontal frontal em relevo 3D",
-      "Fita interna absorvente antitranspirante"
-    ],
-    sizes: ["UNICO"],
+    price: 139,
+    description: "Boné preto com monograma angular bordado e acabamento discreto ThAspect na lateral.",
+    details: ["5-panel", "Bordado frontal 3D", "Fecho ajustável", "Fita interna antitranspirante"],
+    sizes: ["ÚNICO"],
     colorName: "Charcoal",
     colorHex: "#1F1F1F",
-    featured: false,
-    angleView: {
-      frontal: "/brand/templates/product-card-1200.svg",
-      angular: "/brand/templates/hangtag-600x1000.svg",
-      dorsal: "/brand/templates/social-post-1080.svg"
-    }
+    badge: "Novo",
+    featured: true,
+    angleView: { frontal: photo("prod-09"), angular: photo("prod-09"), dorsal: photo("prod-09") }
   }
 ];
 
 export const VALID_COUPONS: Record<string, { discountPercent: number; description: string }> = {
-  "THASPECT10": { discountPercent: 10, description: "Desconto de boas-vindas ThAspect (10%)" },
-  "PERSPECTIVA": { discountPercent: 15, description: "Cupom de lancamento de perspectiva (15%)" },
-  "V1ORIGEM": { discountPercent: 20, description: "Desconto historico comunidade CS-Vault V1 (20%)" },
+  THASPECT10: { discountPercent: 10, description: "Desconto de boas-vindas ThAspect (10%)" },
+  PERSPECTIVA: { discountPercent: 15, description: "Cupom de lançamento Perspective (15%)" },
+  V1ORIGEM: { discountPercent: 20, description: "Desconto comunidade V1 (20%)" }
 };

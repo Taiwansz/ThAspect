@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     siteName: "ThAspect",
     images: [
       {
-        url: "/brand/templates/website-hero-1440.svg",
+        url: "/products/hero-lifestyle.jpg",
         width: 1440,
         height: 900,
-        alt: "ThAspect Hero",
+        alt: "Campanha ThAspect",
       },
     ],
     locale: "pt_BR",
