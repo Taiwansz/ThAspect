@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { CartDrawer } from "@/components/CartDrawer";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { HideOnAntigo } from "@/components/HideOnAntigo";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -60,10 +61,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-screen flex flex-col bg-[#FAF8F3] text-[#1F1F1F] antialiased">
         <CartProvider>
           <ScrollReveal />
-          <Header />
-          <CartDrawer />
+          <HideOnAntigo>
+            <Header />
+            <CartDrawer />
+          </HideOnAntigo>
           <main className="flex-1">{children}</main>
-          <Footer />
+          <HideOnAntigo>
+            <Footer />
+          </HideOnAntigo>
         </CartProvider>
       </body>
     </html>

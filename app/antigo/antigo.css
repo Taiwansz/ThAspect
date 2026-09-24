@@ -1,0 +1,27 @@
+.antigo-root .perspective-hover {
+  transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
+}
+.antigo-root .perspective-hover:hover {
+  transform: translate(-4px,-4px);
+  box-shadow: 6px 6px 0 #1f1f1f;
+}
+.antigo-root .perspective-hover-cobalt {
+  transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s ease;
+}
+.antigo-root .perspective-hover-cobalt:hover {
+  transform: translate(-4px,-4px);
+  box-shadow: 6px 6px 0 #0057ff;
+}
+.antigo-root .angle-cut-24 {
+  clip-path: polygon(0 0,100% 0,100% calc(100% - 24px),0 100%);
+}
+.antigo-root .angle-cut-reverse {
+  clip-path: polygon(0 24px,100% 0,100% 100%,0 100%);
+}
+.antigo-root .angle-badge { transform: skewX(-12deg); }
+.antigo-root .angle-badge > * { transform: skewX(12deg); }
+.antigo-root .animate-marquee { animation: antigo-marquee 28s linear infinite; }
+@keyframes antigo-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .antigo-root .animate-marquee { animation: none; }
+}
