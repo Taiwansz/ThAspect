@@ -42,13 +42,14 @@ export const Header: React.FC = () => {
 
       <header className="sticky top-0 z-50 border-b border-black/10 bg-[#FAF8F3]/95 backdrop-blur-md">
         <div className="mx-auto flex h-[74px] max-w-[1440px] items-center justify-between px-5 md:px-8 lg:px-12">
-          <Link href="/" aria-label="Página inicial ThAspect" className="relative h-11 w-40 shrink-0 sm:w-44">
+          <Link href="/" aria-label="Página inicial ThAspect" className="flex shrink-0 items-center">
             <Image
               src="/brand/logos/svg/thaspect-primary.svg"
-              alt="ThAspect"
-              fill
+              alt="ThAspect Streetwear"
+              width={670}
+              height={240}
               priority
-              className="object-contain object-left"
+              className="h-auto w-[176px] sm:w-[194px]"
             />
           </Link>
 
@@ -126,9 +127,13 @@ export const Header: React.FC = () => {
         <div className="fixed inset-0 z-[60] bg-[#111]/70 backdrop-blur-sm lg:hidden">
           <aside className="ml-auto flex h-full w-[86%] max-w-sm flex-col bg-[#FAF8F3] p-6 shadow-2xl">
             <div className="flex items-center justify-between border-b border-black/10 pb-5">
-              <div className="relative h-9 w-36">
-                <Image src="/brand/logos/svg/thaspect-primary.svg" alt="ThAspect" fill className="object-contain object-left" />
-              </div>
+              <Image
+                src="/brand/logos/svg/thaspect-primary.svg"
+                alt="ThAspect Streetwear"
+                width={670}
+                height={240}
+                className="h-auto w-[164px]"
+              />
               <button type="button" onClick={() => setMobileOpen(false)} aria-label="Fechar menu">
                 <X className="h-6 w-6" />
               </button>

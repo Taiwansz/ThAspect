@@ -9,9 +9,13 @@ export const Footer: React.FC = () => (
     <div className="mx-auto max-w-[1440px] px-6 py-14 md:px-10 lg:px-14">
       <div className="grid gap-12 border-b border-white/10 pb-12 lg:grid-cols-[1.4fr_.7fr_.7fr_1fr]">
         <div>
-          <div className="relative h-12 w-48">
-            <Image src="/brand/logos/svg/thaspect-one-color-white.svg" alt="ThAspect" fill className="object-contain object-left" />
-          </div>
+          <Image
+            src="/brand/logos/svg/thaspect-primary-dark.svg"
+            alt="ThAspect Streetwear"
+            width={670}
+            height={240}
+            className="h-auto w-[220px]"
+          />
           <p className="mt-5 max-w-sm text-sm leading-6 text-white/55">
             Streetwear autoral brasileiro construído a partir de perspectiva, ângulos, movimento e expressão individual.
           </p>
