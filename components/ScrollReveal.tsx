@@ -3,6 +3,11 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
+/**
+ * Route-aware reveal lifecycle.
+ * The root layout survives App Router navigation, so new route content
+ * must be registered after every pathname change and DOM insertion.
+ */
 export const ScrollReveal = () => {
   const pathname = usePathname();
 
@@ -42,11 +47,8 @@ export const ScrollReveal = () => {
       root.querySelectorAll<HTMLElement>("[data-reveal]").forEach(observeNode);
     };
 
-    // Observe everything currently rendered for this route.
     const frame = window.requestAnimationFrame(() => observeTree(document));
 
-    // Next.js keeps the root layout mounted during client-side navigation.
-    // Watch for newly inserted route content and register its reveal nodes.
     const mutationObserver = new MutationObserver((mutations) => {
       for (const mutation of mutations) {
         for (const addedNode of mutation.addedNodes) {
